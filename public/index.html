@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>URL Shortener</title>
+    <link rel="stylesheet" href="./boostrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./style/style.css" />
+  </head>
+  <body>
+    <header class="bg-light py-3 mb-4">
+      <div class="container d-flex justify-content-between align-items-center">
+        <div class="img_container">
+          <a class="nav-link active" href="#">
+            <img src="./assets/images/logo.svg" alt="logo" />
+          </a>
+        </div>
+
+        <div class="hamburger d-lg-none" onclick="toggleMenu()">☰</div>
+
+        <nav class="d-none d-lg-flex gap-3">
+          <a class="nav-link text-muted" href="#">Features</a>
+          <a class="nav-link fw-bold text-dark" href="#">Pricing</a>
+          <a class="nav-link text-muted" href="#">Resources</a>
+        </nav>
+
+        <div class="auth-switch position-relative d-none d-lg-flex">
+          <a href="#" class="auth-link">Login</a>
+          <a href="#" class="auth-link active">Sign Up</a>
+          <span class="auth-pill"></span>
+        </div>
+      </div>
+
+      <div class="mobile-menu d-lg-none" id="mobileMenu">
+        <a href="#">Features</a>
+        <a href="#">Pricing</a>
+        <a href="#">Resources</a>
+        <hr />
+        <a href="#">Login</a>
+        <a href="#" class="signup-btn">Sign Up</a>
+      </div>
+    </header>
+
+    <main>
+      <main class="container">
+        <div class="hero-image">
+          <img
+            src="./assets/images/illustration-working.svg"
+            alt="Hero Image"
+            class="img-fluid"
+          />
+        </div>
+        <div class="hero-text my-4 text-center">
+          <h1 class="display-4">More than Shorter links</h1>
+          <p class="lead">
+            Build your brands recognition and get detailed insights on how your
+            links are performing
+          </p>
+          <a href="#" class="custom-btn btn-lg">Get Started</a>
+        </div>
+      </main>
+
+      <div class="link-wrapper">
+        <div class="link-box container">
+          <div class="input-group">
+            <input
+              type="text"
+              id="urlInput"
+              class="form-control custom-input"
+              placeholder="Shorten a link here..."
+            />
+            <button id="shortenButton" class="btn custom-btn" type="button">
+              Shorten It!
+            </button>
+          </div>
+        </div>
+
+        <div id="shortenedUrls" class="container mt-4"></div>
+
+        <div class="statistics-wrapper">
+          <div class="statistics my-5 text-center">
+            <h1 class="mb-4">Advanced Statistics</h1>
+            <p class="lead mb-5">
+              Track how your links are performing across the web with our
+              advanced statistics dashboard.
+            </p>
+          </div>
+          <section class="features-section text-left container">
+            <div class="feature-card">
+              <div class="icon">
+                <img src="./assets/images/icon-brand-recognition.svg" alt="" />
+              </div>
+              <h4>Brand Recognition</h4>
+              <p>
+                Boost your brand recognition with each click. Genetic clicks
+                don't mean a thing. Branded links help instil confidence on your
+                content
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="icon">
+                <img src="./assets/images/icon-detailed-records.svg" alt="" />
+              </div>
+              <h4>Detailed Records</h4>
+              <p>
+                Gain insights into who is clicking your links. Knowing where and
+                when people engage with your content helps inform better
+                decisions.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="icon">
+                <img src="./assets/images/icon-fully-customizable.svg" alt="" />
+              </div>
+              <h4>Fully Customizable</h4>
+              <p>
+                Improve brand awareness and content discoverability through
+                customisable links supercharging audience engagement.
+              </p>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <main class="last-container">
+      <div class="boost-section">
+        <h1 class="mb-4">Boost your links today</h1>
+        <a href="#" class="custom-btn btn-lg">Get Started</a>
+      </div>
+    </main>
+
+    <footer class="bg-dark text-white">
+      <div class="container py-4">
+        <div class="row text-center text-lg-start">
+          <div
+            class="d-flex flex-column flex-lg-row align-items-center align-items-lg-start justify-content-between text-center text-lg-start"
+          >
+            <div class="mb-4 logo-container">
+              <img src="./assets/images/logo.svg" alt="logo" />
+            </div>
+            <div class="mb-4">
+              <h6 class="fw-bold mb-4">Features</h6>
+              <ul class="list-unstyled">
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >URL Shortening</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Branded Links</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Analytics</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="mb-4">
+              <h6 class="fw-bold mb-4">Resources</h6>
+              <ul class="list-unstyled">
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none">Blog</a>
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Developers</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Support</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="mb-4">
+              <h6 class="fw-bold mb-4">Company</h6>
+              <ul class="list-unstyled">
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none">About</a>
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Our Teams</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-white text-decoration-none"
+                    >Careers</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-white text-decoration-none"
+                    >Contact</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="socials d-flex align-items-center">
+              <a href="#" class="text-white me-3"
+                ><img src="./assets/images/icon-facebook.svg" alt="facebook"
+              /></a>
+              <a href="#" class="text-white me-3"
+                ><img src="./assets/images/icon-twitter.svg" alt="twitter"
+              /></a>
+              <a href="#" class="text-white me-3"
+                ><img src="./assets/images/icon-pinterest.svg" alt="pinterest"
+              /></a>
+              <a href="#" class="text-white me-3"
+                ><img src="./assets/images/icon-instagram.svg" alt="instagram"
+              /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./scripts/script.js"></script>
+    <script src="./boostrap/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
