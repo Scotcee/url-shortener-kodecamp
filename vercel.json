@@ -1,0 +1,3 @@
+{
+  "rewrites": [{ "source": "/shorten", "destination": "/api/shorten" }]
+}
