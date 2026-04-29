@@ -1,4 +1,11 @@
 {
-  "outputDirectory": "public",
-  "rewrites": [{ "source": "/shorten", "destination": "/api/shorten" }]
+  "version": 2,
+  "builds": [
+    { "src": "public/**", "use": "@vercel/static" },
+    { "src": "api/shorten.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/shorten", "dest": "/api/shorten" },
+    { "src": "/(.*)", "dest": "/public/$1" }
+  ]
 }
